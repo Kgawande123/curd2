@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>show</title>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Employee Record</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>eid</td>
+            <td>name</td>
+            <td>city</td>
+            <td>age</td>
+            <td>dob</td>
+            <td>About</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for employee in obj %}
+
+    <tr>
+        <td>{{employee.eid}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.city}}</td>
+        <td>{{employee.age}}</td>
+        <td>{{employee.dob}}</td>
+
+        <td>
+            <a href="/a1/uv/{{employee.eid}}/"><button class="btn btn-success">Update</button></a>
+            <a href ="/a1/dv/{{employee.eid}}"><button class ="btn btn-warning">Delete</button></a>
+
+        </td>
+        </tr>
+
+   {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

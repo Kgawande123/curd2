@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+     {% block title %}
+    <title>ADD</title>
+      {% endblock %}
+
+{% block content %}
+<div class="container bg bg-secondary">
+    <h1>Employee Form </h1>
+<form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="Submit" class="bg bg-success col-6 float-end">
+    <input type = "Reset" class="bg bg-warning col-6">
+
+
+</form>
+    </div>
+{% endblock %}
+
+
